@@ -44,9 +44,9 @@ class AnimalRepository(BaseRepository):
         where = " AND ".join(filtros)
 
         self._cursor.execute(
-            f"SELECT COUNT(*) AS total FROM animais a "
-            f"JOIN especies e ON e.id_especie = a.id_especie "
-            f"JOIN portes   p ON p.id_porte   = a.id_porte "
+            f"SELECT COUNT(*) AS total FROM animais AS a "
+            f"JOIN especies AS e ON e.id_especie = a.id_especie "
+            f"JOIN portes  AS p ON p.id_porte   = a.id_porte "
             f"WHERE {where}",
             params,
         )
